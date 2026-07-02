@@ -43,15 +43,14 @@ section {
   }
   #box_1,
   #box_2,
-  #box_3
-  {
+  #box_3 {
     border: 2px solid black;
     padding: 50px 80px 50px 80px;
   }
-  #box_1{
+  #box_1 {
     margin: 10px 0px 10px 80px;
   }
-  #box_2{
+  #box_2 {
     margin: 10px 0px 10px 10px;
   }
   #box_3,
@@ -64,13 +63,13 @@ section {
     border: 2px solid black;
     padding: 100px 100px 100px 100px;
   }
-  #box_4{
+  #box_4 {
     margin: 20px 5px 20px 0px;
   }
-  #box_5{
+  #box_5 {
     margin: 20px 5px 20px 5px;
   }
-  #box_6{
+  #box_6 {
     margin: 20px 80px 20px 5px;
   }
 
@@ -81,6 +80,6 @@ section {
   margin: 100px;
 }
 
-#progress{
+#progress {
   padding: 20px 10px 20px 20px;
 }
