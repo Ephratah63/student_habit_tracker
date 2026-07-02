@@ -1,0 +1,3 @@
+TextDecoderStream(){
+  alert("It Works!");
+}
