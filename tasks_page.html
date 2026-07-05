@@ -19,9 +19,14 @@
     </section>
 
     <section class="input">
-      <input type="date" />
-      <input class="textfield" type="text" placeholder="add a new task" />
-      <button onclick="add_task">+</button>
+      <input class="due_date" type="date" />
+      <input class="add_tasks_field" type="text" placeholder="add a new task" />
+      <button class="add_task">+</button>
+    </section>
+
+    <section>
+      <h2 class="titles">To-do List</h2>
+      <ul style="list-style: none;" id="tasks_list"></ul>
     </section>
 
     <section>
@@ -32,5 +37,7 @@
         <a id="box_6">Remaining</a>
       </div>
     </section>
+
+    <script src="script.js" ></script>
   </body>
 </html>
