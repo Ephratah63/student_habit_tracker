@@ -1,4 +1,12 @@
+body {
+  color: #222222;
+  background-color: #9df9ef;
+}
+
 .navigation {
+  color: #0f2042;
+  font-weight: bold;
+  background-color: #51e2f5;
   li a {
     text-decoration: none;
   }
@@ -18,10 +26,28 @@ nav ul {
 }
 
 section {
+  color: #a28089 !important;
+  background-color: #ffa8b6;
   border: 2px solid black;
   border-radius: 10px;
   margin: 0px 100px 100px 100px;
   padding: 30px 100px 50px 100px;
+}
+
+.add_task,
+.delete_btn, .nav1, .nav2, .nav3, .nav4, .nav5 {
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* The secret: define what transitions and how long it takes */
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  hover {
+    background-color: #3700b3; /* Darker hue shift */
+    transform: translateY(-2px); /* Moves button up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deepens the shadow */
+  }
 }
 
 .input {
@@ -37,8 +63,8 @@ section {
 }
 
 img {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   background-color: white;
 }
 
@@ -50,6 +76,8 @@ img {
   #box_1,
   #box_2,
   #box_3 {
+    color: turquoise;
+    background-color: #a28089;
     border: 2px solid black;
     padding: 50px 80px 50px 80px;
   }
@@ -66,6 +94,8 @@ img {
   #box_4,
   #box_5,
   #box_6 {
+    color: turquoise;
+    background-color: #a28089;
     border: 2px solid black;
     padding: 100px 100px 100px 100px;
   }

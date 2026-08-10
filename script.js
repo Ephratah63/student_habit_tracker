@@ -109,10 +109,10 @@ function display_tasks() {
     });
 
     //adding the delete icon
-    const delteIcon = document.createElement("img");
-    delteIcon.src = "images/icon_delete.png";
-    delteIcon.alt = "delete icon";
-    deleteButton.appendChild(delteIcon);
+    const deleteIcon = document.createElement("img");
+    deleteIcon.src = "images/delete red bin icon.png";
+    deleteIcon.alt = "delete icon";
+    deleteButton.appendChild(deleteIcon);
 
     // Append the list item to the tasks list element (UL)
     //tasksListElement.appendChild(listItem);
