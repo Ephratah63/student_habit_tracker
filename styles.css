@@ -35,7 +35,12 @@ section {
 }
 
 .add_task,
-.delete_btn, .nav1, .nav2, .nav3, .nav4, .nav5 {
+.delete_btn,
+.nav1,
+.nav2,
+.nav3,
+.nav4,
+.nav5 {
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* The secret: define what transitions and how long it takes */
@@ -118,4 +123,41 @@ img {
 
 #progress {
   padding: 20px 10px 20px 20px;
+}
+
+.category {
+  font-weight: light
+}
+.money {
+  background-color: rgb(156, 66, 66);
+}
+.mental {
+  background-color: rgb(9, 250, 9);
+}
+.spiritual {
+  background-color: yellow;
+}
+.future {
+  background-color: rgb(202, 9, 202);
+}
+.beauty {
+  background-color: #FF6EC7;
+}
+.body {
+  background-color: red;
+}
+.friendships {
+  background-color: rgb(255, 165, 0);
+}
+.interests{
+  background-color: cyan;
+}
+.community{
+  background-color: royalblue;
+}
+.nutrition{
+  background-color: #fcda52
+}
+.house_work{
+  background-color: lightgrey
 }

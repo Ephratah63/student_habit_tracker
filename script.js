@@ -27,12 +27,16 @@ function add_tasks() {
   const dateInputElement = document.querySelector(".due_date");
   const dueDate = dateInputElement.value;
 
-  // Check if both fields have values
-  if (taskName && dueDate) {
+  const categoryInputElement = document.querySelector(".category");
+  const categoryName = categoryInputElement.value.trim();
+
+  // Check if all fields have values
+  if (taskName && dueDate && categoryName) {
     // Add the new task to the list
     taskList.push({
       name: taskName,
       due: dueDate,
+      category: categoryName,
       completed: false, // Track checkbox state
     });
 
@@ -40,10 +44,12 @@ function add_tasks() {
     taskInputElement.value = "";
     dateInputElement.value = "";
 
+    save_tasks_locally();
+
     // Update the displayed list
     display_tasks();
   } else {
-    alert("Please fill in both fields!");
+    alert("Please fill in all required fields!");
   }
 }
 
@@ -70,15 +76,21 @@ function display_tasks() {
     checkBox.addEventListener("change", () => {
       // Update task completion status
       task.completed = checkBox.checked;
+      save_tasks_locally();
       display_tasks(); // Re-display tasks to reflect changes
     });
 
     //task text
     const taskSpan = document.createElement("span");
-    taskSpan.textContent = `${task.name} - Due: ${task.due}`;
+    taskSpan.textContent = `${task.name} - Due: ${task.due} - Category: ${task.category}`;
     if (task.completed) {
       taskSpan.style.textDecoration = "line-through";
     }
+
+    const categorySpan = document.createElement("span");
+    categorySpan.textContent = task.category;
+
+    listItem.appendChild(taskSpan);
 
     // Add checkbox to list item
     //listItem.appendChild(checkBox);
@@ -106,6 +118,7 @@ function display_tasks() {
     deleteButton.style.cursor = "pointer";
     deleteButton.addEventListener("click", () => {
       delete_task(index);
+      save_tasks_locally();
     });
 
     //adding the delete icon
@@ -122,13 +135,30 @@ function display_tasks() {
     listItem.appendChild(taskSpan);
     listItem.appendChild(deleteButton);
     tasksListElement.appendChild(listItem);
+
+    save_tasks_locally();
   });
+}
+
+function save_tasks_locally() {
+  localStorage.setItem("tasks", JSON.stringify(taskList));
+}
+
+function load_tasks_locally() {
+  const storedTasks = localStorage.getItem("tasks");
+  if (storedTasks != null) {
+    taskList.splice(0, taskList.length, ...JSON.parse(storedTasks)); // Load tasks from local storage
+    display_tasks();
+  }
 }
 
 function delete_task(index) {
   taskList.splice(index, 1); // Remove task from list by index
+  save_tasks_locally();
   display_tasks(); // Update displayed tasks
 }
+
+document.addEventListener("DOMContentLoaded", load_tasks_locally);
 
 // Add an event listener to the button for adding tasks
 document.querySelector(".add_task").addEventListener("click", add_tasks);
