@@ -15,13 +15,15 @@
           <li><a href="settings_page.html">Settings</a></li>
           <li>Login</li>
         </ul>
+        <!--toggle switch---->
+        <input type="checkbox" id="switch">
+        <label for="switch" class="toggle"></label>
       </nav>
     </section>
 
     <section class="input">
       <input class="due_date" type="date" />
       <input class="add_tasks_field" type="text" placeholder="add a new task" />
-      <button class="add_task">+</button>
       <select class="category">
         <option value="">Select category</option>
         <option class="money">Money</option>
@@ -37,22 +39,31 @@
         <option class="nutrition">Nutrition</option>
         <option class="house_work">House Work</option>
       </select>
+      <button class="add_task">+</button>
     </section>
 
     <section>
-      <h2 class="titles">To-do List</h2>
+      <h2 class="titles" id="to_do_list">To-do List</h2>
       <ul style="list-style: none" id="tasks_list"></ul>
     </section>
 
     <section>
       <h2 class="titles">Progress Summary</h2>
       <div id="progress">
-        <a id="box_4">Completed</a>
-        <a id="box_5">Total</a>
-        <a id="box_6">Remaining</a>
+        <button id="box_4" class="pending">
+          Pending
+          <span class="count" id="pending_count"></span>
+        </button>
+        <button id="box_5" class="completed">
+          Completed
+          <span class="count" id="completed_count"></span>
+        </button>
+        <button id="box_6" class="all">
+          All
+          <p class="count" id="all_count"></p>
+        </button>
       </div>
     </section>
-
     <script src="script.js"></script>
   </body>
 </html>

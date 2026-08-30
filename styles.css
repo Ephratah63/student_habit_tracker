@@ -2,6 +2,10 @@ body {
   color: #222222;
   background-color: #9df9ef;
 }
+body.dark, section.dark {
+  background-color: black;
+  color: white;
+}
 
 .navigation {
   color: #0f2042;
@@ -10,19 +14,55 @@ body {
   li a {
     text-decoration: none;
   }
-  margin: 0px 10px 100px 10px;
-  padding: 0.5px 30px 0.5px 10px;
-}
-
-nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  list-style: none;
+  margin: 0 0.5em 5em 0.5em;
+  padding: 0.5em 1em 0.5em 1em;
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+  }
+  #switch {
+    display: none;
+  }
+  .toggle {
+    width: 3em;
+    height: 2em;
+    background: rgb(7, 156, 248);
+    border-radius: 5em;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    box-shadow: 0em 0em 1em 0em;
+  }
+  /* Toggle button switch meaning slide or click the knob to change */
+  .toggle::before {
+    content: "";
+    position: absolute;
+    top: 0.17em;
+    left: 0.2em;
+    width: 1.7em;
+    height: 1.7em;
+    background: orange;
+    border-radius: 5em;
+    transition: 0.3s;
+  }
+  /* checked state: change track color and slide knob */
+  #switch:checked + .toggle {
+    background: rgb(8, 8, 91); /*blueblack when active*/
+  }
+  #switch:checked + .toggle::before {
+    left: 1em;
+    background: white;
+  }
 }
 
 .titles {
   text-align: center;
+}
+#to_do_list {
+  color: white;
+  background-color: red;
 }
 
 section {
@@ -30,8 +70,8 @@ section {
   background-color: #ffa8b6;
   border: 2px solid black;
   border-radius: 10px;
-  margin: 0px 100px 100px 100px;
-  padding: 30px 100px 50px 100px;
+  margin: 1em 2em 10em 2em;
+  padding: 1.5em 2em 1.5em 2em;
 }
 
 .add_task,
@@ -42,7 +82,7 @@ section {
 .nav4,
 .nav5 {
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4% 6% rgba(0, 0, 0, 0.1);
   /* The secret: define what transitions and how long it takes */
   transition:
     background-color 0.3s ease,
@@ -50,83 +90,76 @@ section {
     box-shadow 0.2s ease;
   hover {
     background-color: #3700b3; /* Darker hue shift */
-    transform: translateY(-2px); /* Moves button up slightly */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deepens the shadow */
+    transform: translateY(-2%); /* Moves button up slightly */
+    box-shadow: 0 6% 12% rgba(0, 0, 0, 0.15); /* Deepens the shadow */
   }
 }
 
 .input {
-  input {
+  input,
+  select {
     text-align: center;
   }
   display: grid;
-  grid-template-columns: 200px 200px 100px;
+  grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
   align-items: center;
-  gap: 5px;
-  padding: 20px 200px 20px 250px;
-  margin: 100px 100px 500px 100px;
+  gap: 2%;
+  padding: 3em 2em 3em 2em;
+  margin: 5em 2em 0 2em;
 }
 
 img {
-  width: 20px;
-  height: 20px;
-  background-color: white;
+  max-width: 7%;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }
 
-.choose_pages,
 #progress {
+  a {
+    text-decoration: none;
+  }
+  #box_4,
+  #box_5,
+  #box_6 {
+    margin: 15em;
+    color: turquoise;
+    background-color: #a28089;
+    border: 2px solid black;
+    padding: 5em 7em 5em 7em;
+    border-radius: 3.5em;
+  }
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  padding: 5em 8em 5em 8em;
+}
+
+.choose_pages {
   a {
     text-decoration: none;
   }
   #box_1,
   #box_2,
   #box_3 {
+    margin: 2em;
     color: turquoise;
     background-color: #a28089;
     border: 2px solid black;
-    padding: 50px 80px 50px 80px;
+    padding: 5em 7em 5em 7em;
   }
-  #box_1 {
-    margin: 10px 0px 10px 80px;
-  }
-  #box_2 {
-    margin: 10px 0px 10px 10px;
-  }
-  #box_3,
-  #box_6 {
-    margin: 10px 80px 10px 10px;
-  }
-  #box_4,
-  #box_5,
-  #box_6 {
-    color: turquoise;
-    background-color: #a28089;
-    border: 2px solid black;
-    padding: 100px 100px 100px 100px;
-  }
-  #box_4 {
-    margin: 20px 5px 20px 0px;
-  }
-  #box_5 {
-    margin: 20px 5px 20px 5px;
-  }
-  #box_6 {
-    margin: 20px 80px 20px 5px;
-  }
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
-  margin: 100px;
-}
-
-#progress {
-  padding: 20px 10px 20px 20px;
+  text-align: center;
+  margin: auto;
+  padding: 5em 8em 5em 8em;
 }
 
 .category {
-  font-weight: light
+  font-weight: light;
 }
 .money {
   background-color: rgb(156, 66, 66);
@@ -141,7 +174,7 @@ img {
   background-color: rgb(202, 9, 202);
 }
 .beauty {
-  background-color: #FF6EC7;
+  background-color: #ff6ec7;
 }
 .body {
   background-color: red;
@@ -149,15 +182,130 @@ img {
 .friendships {
   background-color: rgb(255, 165, 0);
 }
-.interests{
+.interests {
   background-color: cyan;
 }
-.community{
+.community {
   background-color: royalblue;
 }
-.nutrition{
-  background-color: #fcda52
+.nutrition {
+  background-color: #fcda52;
 }
-.house_work{
-  background-color: lightgrey
+.house_work {
+  background-color: lightgrey;
+}
+
+.pending,
+.completed,
+.all {
+  position: relative;
+}
+
+.count {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  background-color: red;
+  border: solid 1em black;
+  border-radius: 100em;
+  padding: 0.5em;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 800px) {
+  .input {
+    grid-template-columns: 1fr;
+    padding: 5em;
+  }
+  #progress {
+    grid-template-columns: 1fr;
+    padding: 0.5em;
+    #box_4,
+    #box_5,
+    #box_6 {
+      margin: 1em;
+    }
+  }
+  .choose_pages {
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 0 2em 6em 2em;
+    margin: 1em;
+  }
+  #box_1,
+  #box_2,
+  #box_3 {
+    padding: 0.5em;
+    margin: 0 2em 0 2em;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1210px) {
+  .input {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 3em;
+  }
+  #progress {
+    grid-template-columns: 1fr;
+    padding: 0.5em;
+    #box_4,
+    #box_5,
+    #box_6 {
+      margin: 1em;
+    }
+    #box_6 {
+      grid-column: 1 / span 2;
+    }
+  }
+  .choose_pages {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    padding: 0 2em 6em 2em;
+    margin: 1em;
+  }
+  #box_1,
+  #box_2,
+  #box_3 {
+    padding: 0.5em;
+    margin: 0 2em 0 2em;
+  }
+  #box_3 {
+    grid-column: 1 / span 2;
+  }
+}
+
+@media (min-width: 1211px) {
+  .input {
+    grid-template-columns: 1.5fr 5fr 2fr 1fr;
+    padding: 3em 2em 3em 2em;
+  }
+  #progress {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 5em 8em 5em 8em;
+    #box_4,
+    #box_5,
+    #box_6 {
+      margin: 1em;
+    }
+  }
+  .choose_pages {
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    padding: 5em 8em 5em 8em;
+  }
+  #box_1,
+  #box_2,
+  #box_3 {
+    margin: 2em;
+    padding: 5em 7em 5em 7em;
+  }
 }
