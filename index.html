@@ -1,0 +1,123 @@
+<!Doctype html>
+<html>
+  <head>
+    <meta charset='UTF-8' name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Life Balance Tracker</title>
+    <link rel="stylesheet" href="styles.css"></link>
+<style>
+  .pillars_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2em;
+  padding: 3em 2em;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pillar_card {
+  cursor: pointer;
+  background: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 16px;
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pillar_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle accent variations matching your structural design weights */
+.pillar_card[data-pillar="work"]    { border-color: #51e2f5; }
+.pillar_card[data-pillar="health"]  { border-color: #ffa8b6; }
+.pillar_card[data-pillar="love"]    { border-color: #a28089; }
+.pillar_card[data-pillar="play"]    { border-color: #fcda52; }
+
+/* Nested Sub-Category Wrapper System */
+.sub_category_depth_block {
+  margin-left: 1.5em;
+  border-left: 2px solid rgba(81, 226, 245, 0.3);
+  padding-left: 1em;
+}
+
+/* --- Dark Mode Pillar Overrides --- */
+body.dark {
+  .pillar_card {
+    background: linear-gradient(rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+  }
+  .pillar_card:hover {
+    box-shadow: 0 12px 24px rgba(81, 226, 245, 0.2);
+  }
+}
+</style>
+</head>
+<body>
+      <section class="navigation">
+      <nav>
+        <ul>
+          <li class="nav1"><a href="home_page.html">Home</a></li>
+          <li class="nav2"><a href="calendar_page.html">Calendar</a></li>
+          <li class="nav3"><a href="theme_page.html">Theme</a></li>
+          <li class="nav4"><a href="settings_page.html">Settings</a></li>
+          <li class="nav5"><a href="login_page.html">Login</a></li>
+        </ul>
+        <!--toggle switch---->
+        <input type="checkbox" id="switch">
+        <label for="switch" class="toggle"></label>
+      </nav>
+    </section>
+    <header>
+      <h1 class="titles">The 4 sectors of life</h1>
+    </header>
+    
+<section class="life_hierarchy" id="lifeHierarchy">
+
+  <!-- LEFT: The currently selected pillar/category -->
+  <div class="hierarchy_current" id="hierarchyCurrent">
+    <div class="current_card" id="currentCard">
+      <span class="current_icon" id="currentIcon"></span>
+      <h2 id="currentTitle">Choose a sector</h2>
+      <p id="currentDescription">
+        Select one of the four sectors of life to explore.
+      </p>
+    </div> 
+    <button class="hierarchy_back" id="hierarchyBack" id="box_7" type="button">
+      ← Back
+    </button>
+  </div>
+
+  <!-- RIGHT: Categories appear here -->
+  <div class="hierarchy_children" id="hierarchyChildren">
+
+    <!-- Initial four pillars -->
+    <button class="pillar_option work_option" id="box_8" data-pillar="work" type="button">
+      <span>💼</span>
+      <strong>Work</strong>
+    </button>
+
+    <button class="pillar_option health_option" id="box_9" data-pillar="health" type="button">
+      <span>❤️</span>
+      <strong>Health</strong>
+    </button>
+
+    <button class="pillar_option love_option" id="box_10" data-pillar="love" type="button">
+      <span>✨</span>
+      <strong>Love</strong>
+    </button>
+
+    <button class="pillar_option play_option" id="box_11" data-pillar="play" type="button">
+      <span>🎮</span>
+      <strong>Play</strong>
+    </button>
+
+  </div>
+
+</section>
+  <script src="script.js"></script>
+  <script src="life.js"></script>
+</body>

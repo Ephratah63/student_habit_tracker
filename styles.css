@@ -1,10 +1,163 @@
+body,
+.navigation,
+section,
+.titles,
+#box_1,
+#box_2,
+#box_3,
+#box_4,
+#box_5,
+#box_6,
+#box_7,
+#box_8,
+#box_9,
+#box_10,
+#box_11,
+input,
+select,
+.category {
+  /* This smoothly cross-fades all color and layout shifts over 0.4 seconds */
+  transition:
+    background 0.4s ease-in-out,
+    background-color 0.4s ease-in-out,
+    color 0.3s ease-in-out,
+    border-color 0.4s ease-in-out,
+    box-shadow 0.4s ease-in-out;
+}
+
 body {
   color: #222222;
   background-color: #9df9ef;
+  font-family: sans-serif;
 }
-body.dark, section.dark {
-  background-color: black;
-  color: white;
+
+body.dark,
+input.add_task {
+  /*background-color: rgb(14, 20, 56);*/
+  background:
+    linear-gradient(rgba(11, 14, 26, 0.65), rgba(11, 14, 26, 0.65)),
+    url("/images/dark theme 6.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #e2e8f0;
+}
+
+body.dark {
+  .navigation {
+    background:
+      linear-gradient(rgba(10, 10, 18, 0.8), rgba(10, 10, 18, 0.85)),
+      url("/images/dark theme 1.jpg") no-repeat center center;
+    background-size: cover;
+
+    li a,
+    .nav1,
+    .nav2,
+    .nav3,
+    .nav4,
+    .nav5 {
+      color: #e2e8f0 !important;
+      font-weight: bold;
+    }
+  }
+
+  .titles {
+    background:
+      linear-gradient(rgba(24, 20, 37, 0.75), rgba(24, 20, 37, 0.85)),
+      url("/images/dark theme 1.jpg") no-repeat center center;
+    background-size: cover;
+    color: white;
+    border: 1px solid rgba(162, 128, 137, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  section {
+    background:
+      linear-gradient(rgba(10, 10, 18, 0.8), rgba(10, 10, 18, 0.85)),
+      url("/images/dark theme 1.jpg") no-repeat center center;
+    background-size: cover;
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(81, 226, 245, 0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+
+  #box_1,
+  #box_2,
+  #box_3,
+  #box_4,
+  #box_5,
+  #box_6,
+  #box_7,
+  #box_8,
+  #box_9,
+  #box_10,
+  #box_11 {
+    background:
+      linear-gradient(rgba(10, 10, 20, 0.5), rgba(10, 10, 20, 0.5)),
+      url("/images/dark theme 6.jpg") no-repeat center center;
+    background-size: cover;
+    color: #e2e8f0 !important;
+    border: 1px solid rgba(81, 226, 245, 0.35);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+    a {
+      color: #38bdf8 !important;
+    }
+  }
+
+  .money {
+    background-color: rgba(198, 40, 40, 0.3) !important;
+    color: #ff8a80 !important;
+    border: 1px solid rgba(198, 40, 40, 0.4);
+  }
+  .mental {
+    background-color: rgba(46, 125, 50, 0.3) !important;
+    color: #81c784 !important;
+    border: 1px solid rgba(46, 125, 50, 0.4);
+  }
+  .spiritual {
+    background-color: rgba(251, 192, 45, 0.25) !important;
+    color: #ffd54f !important;
+    border: 1px solid rgba(251, 192, 45, 0.3);
+  }
+  .future {
+    background-color: rgba(142, 36, 170, 0.3) !important;
+    color: #ba68c8 !important;
+    border: 1px solid rgba(142, 36, 170, 0.4);
+  }
+  .beauty {
+    background-color: rgba(236, 64, 122, 0.3) !important;
+    color: #f48fb1 !important;
+    border: 1px solid rgba(236, 64, 122, 0.4);
+  }
+  .body {
+    background-color: rgba(198, 40, 40, 0.3) !important;
+    color: #ff8a80 !important;
+    border: 1px solid rgba(198, 40, 40, 0.4);
+  }
+  .friendships {
+    background-color: rgba(239, 108, 0, 0.25) !important;
+    color: #ffb74d !important;
+    border: 1px solid rgba(239, 108, 0, 0.3);
+  }
+  .interests {
+    background-color: rgba(0, 131, 143, 0.3) !important;
+    color: #4dd0e1 !important;
+    border: 1px solid rgba(0, 131, 143, 0.4);
+  }
+  .community {
+    background-color: rgba(40, 53, 147, 0.3) !important;
+    color: #9fa8da !important;
+    border: 1px solid rgba(40, 53, 147, 0.4);
+  }
+  .nutrition {
+    background-color: rgba(251, 192, 45, 0.25) !important;
+    color: #ffd54f !important;
+    border: 1px solid rgba(251, 192, 45, 0.3);
+  }
+  .house_work {
+    background-color: rgba(117, 117, 117, 0.3) !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(117, 117, 117, 0.4);
+  }
 }
 
 .navigation {
@@ -82,16 +235,16 @@ section {
 .nav4,
 .nav5 {
   cursor: pointer;
-  box-shadow: 0 4% 6% rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   /* The secret: define what transitions and how long it takes */
   transition:
     background-color 0.3s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  hover {
+  &:hover {
     background-color: #3700b3; /* Darker hue shift */
-    transform: translateY(-2%); /* Moves button up slightly */
-    box-shadow: 0 6% 12% rgba(0, 0, 0, 0.15); /* Deepens the shadow */
+    transform: translateY(-2px); /* Moves button up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Deepens the shadow */
   }
 }
 
@@ -103,13 +256,13 @@ section {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
   align-items: center;
-  gap: 2%;
+  gap: 2px;
   padding: 3em 2em 3em 2em;
   margin: 5em 2em 0 2em;
 }
 
 img {
-  max-width: 7%;
+  max-width: 7px;
   height: auto;
   padding: 0;
   margin: 0;
@@ -121,8 +274,9 @@ img {
   }
   #box_4,
   #box_5,
-  #box_6 {
-    margin: 15em;
+  #box_6,
+  #box_7 {
+    margin: 1em;
     color: turquoise;
     background-color: #a28089;
     border: 2px solid black;
@@ -137,64 +291,60 @@ img {
   padding: 5em 8em 5em 8em;
 }
 
-.choose_pages {
-  a {
-    text-decoration: none;
-  }
-  #box_1,
-  #box_2,
-  #box_3 {
-    margin: 2em;
-    color: turquoise;
-    background-color: #a28089;
-    border: 2px solid black;
-    padding: 5em 7em 5em 7em;
-  }
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  padding: 5em 8em 5em 8em;
-}
-
 .category {
-  font-weight: light;
+  font-size: 0.85em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  /*border-radius: 20px;*/
+  padding: 0.25em 0.8em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .money {
-  background-color: rgb(156, 66, 66);
+  background-color: #fce8e6;
+  color: #a51d24;
 }
 .mental {
-  background-color: rgb(9, 250, 9);
+  background-color: #e6f4ea;
+  color: #137333;
 }
 .spiritual {
-  background-color: yellow;
+  background-color: #fef7e0;
+  color: #b06000;
 }
 .future {
-  background-color: rgb(202, 9, 202);
+  background-color: #f3e5f5;
+  color: #7b1fa2;
 }
 .beauty {
-  background-color: #ff6ec7;
+  background-color: #fce4ec;
+  color: #c2185b;
 }
 .body {
-  background-color: red;
+  background-color: #ffebee;
+  color: #c62828;
 }
 .friendships {
-  background-color: rgb(255, 165, 0);
+  background-color: #fff3e0;
+  color: #e65100;
 }
 .interests {
-  background-color: cyan;
+  background-color: #e0f7fa;
+  color: #006064;
 }
 .community {
-  background-color: royalblue;
+  background-color: #e8eaf6;
+  color: #1a237e;
 }
 .nutrition {
-  background-color: #fcda52;
+  background-color: #fffde7;
+  color: #f57f17;
 }
 .house_work {
-  background-color: lightgrey;
+  background-color: #f5f5f5;
+  color: #424242;
 }
-
 .pending,
 .completed,
 .all {
@@ -238,7 +388,11 @@ img {
   }
   #box_1,
   #box_2,
-  #box_3 {
+  #box_3,
+  #box_8,
+  #box_9,
+  #box_10,
+  #box_11 {
     padding: 0.5em;
     margin: 0 2em 0 2em;
   }
@@ -255,11 +409,21 @@ img {
     padding: 0.5em;
     #box_4,
     #box_5,
-    #box_6 {
+    #box_6,
+    #box_7 {
       margin: 1em;
     }
     #box_6 {
-      grid-column: 1 / span 2;
+      grid-column: 1 / span 3;
+    }
+    #box_9 {
+      grid-column: 1 / span 3;
+    }
+    #box_10 {
+      grid-column: 1 / span 3;
+    }
+    #box_11 {
+      grid-column: 1 / span 3;
     }
   }
   .choose_pages {
@@ -272,40 +436,442 @@ img {
   }
   #box_1,
   #box_2,
-  #box_3 {
+  #box_3,
+  #box_7,
+  #box_8,
+  #box_9,
+  #box_10,
+  #box_11 {
     padding: 0.5em;
     margin: 0 2em 0 2em;
   }
   #box_3 {
     grid-column: 1 / span 2;
   }
-}
-
-@media (min-width: 1211px) {
-  .input {
-    grid-template-columns: 1.5fr 5fr 2fr 1fr;
-    padding: 3em 2em 3em 2em;
+  #box_8 {
+    grid-column: 1 / span 3;
   }
-  #progress {
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 5em 8em 5em 8em;
-    #box_4,
-    #box_5,
-    #box_6 {
-      margin: 1em;
+  #box_9 {
+    grid-column: 1 / span 3;
+  }
+  #box_10 {
+    grid-column: 1 / span 3;
+  }
+  #box_11 {
+    grid-column: 1 / span 3;
+  }
+
+  @media (min-width: 1211px) {
+    .input {
+      grid-template-columns: 1.5fr 5fr 2fr 1fr;
+      padding: 3em 2em 3em 2em;
+    }
+    #progress {
+      grid-template-columns: 1fr 1fr 1fr;
+      padding: 5em 8em 5em 8em;
+      #box_4,
+      #box_5,
+      #box_6,
+      #box_7 {
+        margin: 1em;
+      }
+    }
+    .choose_pages {
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      padding: 5em 8em 5em 8em;
+    }
+    #box_1,
+    #box_2,
+    #box_3,
+    #box_8,
+    #box_9,
+    #box_10,
+    #box_11 {
+      margin: 2em;
+      padding: 5em 7em 5em 7em;
     }
   }
-  .choose_pages {
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    text-align: center;
-    margin: auto;
-    padding: 5em 8em 5em 8em;
+}
+
+/* =========================================================
+   LIFE HIERARCHY DASHBOARD
+   Step 2: Initial visual layout
+   ========================================================= */
+
+.life_hierarchy {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.8fr) minmax(400px, 1.5fr);
+  gap: 2em;
+
+  max-width: 1200px;
+  min-height: 430px;
+
+  margin: 2em auto 8em auto;
+  padding: 3em;
+
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 24px;
+
+  box-sizing: border-box;
+
+  align-items: center;
+
+  transition:
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.hierarchy_current {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 320px;
+}
+
+.current_card {
+  width: 100px;
+  min-height: 260px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 2em;
+
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #000;
+  border-radius: 22px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.current_icon {
+  display: block;
+
+  font-size: 4em;
+  line-height: 1;
+
+  margin-bottom: 0.35em;
+}
+
+.current_card h2 {
+  margin: 0.2em 0;
+
+  font-size: 2em;
+}
+
+.current_card p {
+  max-width: 260px;
+
+  margin: 0.5em auto;
+
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.hierarchy_back {
+  margin-top: 1.2em;
+
+  padding: 0.7em 1.5em;
+
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.7);
+
+  color: inherit;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hierarchy_back:hover {
+  transform: translateX(-4px);
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.hierarchy_children {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+
+  gap: 1.2em;
+
+  align-items: center;
+
+  min-height: 320px;
+}
+
+/* =========================================================
+   PILLAR / CATEGORY BUTTONS
+   ========================================================= */
+
+.pillar_option {
+  min-height: 130px;
+
+  padding: 1.5em;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5em;
+
+  border: 2px solid rgba(0, 0, 0, 0.25);
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.75);
+
+  color: #222;
+
+  cursor: pointer;
+
+  font-family: inherit;
+
+  box-shadow: 0 7px 16px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.pillar_option span {
+  font-size: 2.2em;
+  line-height: 1;
+}
+
+.pillar_option strong {
+  font-size: 1.1em;
+}
+
+/* Hover */
+
+.pillar_option:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   PILLAR ACCENT COLORS
+   ========================================================= */
+
+.work_option {
+  border-color: #29b6f6;
+}
+
+.health_option {
+  border-color: #43a047;
+}
+
+.love_option {
+  border-color: #e53935;
+}
+
+.play_option {
+  border-color: #fb8c00;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+body.dark .life_hierarchy {
+  background:
+    linear-gradient(rgba(10, 10, 18, 0.78), rgba(10, 10, 18, 0.88)),
+    url("/images/dark theme 1.jpg") no-repeat center center;
+
+  background-size: cover;
+
+  border-color: rgba(81, 226, 245, 0.25);
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
+}
+
+body.dark .current_card {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  color: #e2e8f0;
+
+  border-color: rgba(81, 226, 245, 0.35);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .pillar_option {
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+
+  color: #e2e8f0;
+
+  border-color: rgba(81, 226, 245, 0.3);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+}
+
+body.dark .pillar_option:hover {
+  background: linear-gradient(
+    rgba(81, 226, 245, 0.1),
+    rgba(255, 255, 255, 0.03)
+  );
+
+  box-shadow: 0 12px 30px rgba(81, 226, 245, 0.12);
+}
+
+body.dark .hierarchy_back {
+  background: rgba(255, 255, 255, 0.06);
+
+  color: #e2e8f0;
+
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark .hierarchy_back:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .life_hierarchy {
+    grid-template-columns: 1fr;
+
+    max-width: 700px;
+
+    padding: 2em;
   }
-  #box_1,
-  #box_2,
-  #box_3 {
-    margin: 2em;
-    padding: 5em 7em 5em 7em;
+
+  .hierarchy_current {
+    min-height: auto;
   }
+
+  .current_card {
+    min-height: 220px;
+  }
+
+  .hierarchy_children {
+    min-height: auto;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .life_hierarchy {
+    margin: 1em;
+
+    padding: 1.2em;
+
+    border-radius: 18px;
+  }
+
+  .hierarchy_children {
+    grid-template-columns: 1fr;
+  }
+
+  .pillar_option {
+    min-height: 100px;
+  }
+
+  .current_card {
+    min-height: 190px;
+  }
+
+  .current_icon {
+    font-size: 3em;
+  }
+
+  .current_card h2 {
+    font-size: 1.5em;
+  }
+}
+
+:root {
+  /* 4 LIFE PILLARS */
+  --work: #2196f3;
+  --health: #43a047;
+  --love: #e53935;
+  --play: #fb8c00;
+
+  /* HEALTH */
+  --mental: #66bb6a;
+  --emotional: #26a69a;
+  --spiritual: #f9a825;
+  --physical: #2e7d32;
+
+  /* PHYSICAL */
+  --body: #ef5350;
+  --nutrition: #fbc02d;
+  --hygiene: #29b6f6;
+  --beauty: #ec407a;
+
+  /* LOVE */
+  --friendships: #ff7043;
+  --community: #5c6bc0;
+  --family: #ad1457;
+  --romantic: #d81b60;
+
+  /* PLAY */
+  --explore: #ff9800;
+  --creative: #ab47bc;
+  --interests: #26a69a;
+
+  /* WORK */
+  --school: #42a5f5;
+  --future: #7e57c2;
+  --money: #2e7d32;
+  --dream: #00838f;
+  --house-work: #78909c;
 }

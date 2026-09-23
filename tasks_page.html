@@ -16,7 +16,7 @@
           <li>Login</li>
         </ul>
         <!--toggle switch---->
-        <input type="checkbox" id="switch">
+        <input type="checkbox" id="switch" />
         <label for="switch" class="toggle"></label>
       </nav>
     </section>
@@ -47,6 +47,11 @@
       <ul style="list-style: none" id="tasks_list"></ul>
     </section>
 
+    <div>
+      <p id="tryin">Try me!</p>
+      <button id="click">click me</button>
+    </div>
+
     <section>
       <h2 class="titles">Progress Summary</h2>
       <div id="progress">
@@ -65,5 +70,15 @@
       </div>
     </section>
     <script src="script.js"></script>
+    <script src="tasks.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      //slide in and out effect of tasks using jQuery
+      $(document).ready(function () {
+        $("#click").click(function () {
+          $("#tryin").animation(300);
+        });
+      });
+    </script>
   </body>
 </html>
